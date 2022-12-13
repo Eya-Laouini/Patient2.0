@@ -1,0 +1,37 @@
+<div class="container">
+    <div>
+    <h2>Add Patient :</h2>
+    </div>
+    <form >
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID patient</label>
+        <input type="text" [(ngModel)]="newPatient.idPatient"
+        name="idPatient" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Fullname</label>
+        <input type="text"[(ngModel)]= "newPatient.nomPatient"
+        name="nomPatient" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Gender</label>
+        <input type="text" [(ngModel)]= "newPatient.genderPatient"
+        name="genderPatient" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Birth Date</label>
+        <input type="date" [(ngModel)]= "newPatient.birthDate"
+        name="birthDate" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Service</label> 
+        <select class="form-control form-control-lg" id="idSer" name="idSer" [(ngModel)]="newIdSer"> 
+        <option *ngFor="let ser of services" [value]="ser.idSer" > {{ser.nomSer}} </option> 
+        </select> 
+        </div>
+        <div class="mt-2">
+        <button type="submit" (click)="addPatient()"class="btn btn-success">Add</button>
+        </div>
+        </form>
+        
+        </div>

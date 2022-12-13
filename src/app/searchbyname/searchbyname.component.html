@@ -1,0 +1,27 @@
+    <div class="form-group mx-sm-3 mb-2 mt-2 "> 
+    <label>Patient name by typing:  </label> <br>
+    <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)"> 
+    </div>
+    
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <table class="table table-striped">
+    <thead>
+        <tr> <th>Id</th><th>Fullname</th> <th>Gender</th> <th>BirthDate</th><th>Service</th></tr>
+    </thead>
+    <tbody *ngFor="let patient of patients">
+
+    <tr>
+    <td>{{patient.idPatient}}</td>
+    <td>{{patient.nomPatient}}</td>
+    <td>{{patient.genderPatient}}</td>
+    <td>{{patient.birthDate  | date:'dd/MM/yyyy'}}</td>
+    <td>{{patient.service.nomSer}}</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+</div>
+   
